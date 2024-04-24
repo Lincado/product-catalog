@@ -1,11 +1,12 @@
 <h1 align="center"> GoBuy </h1>
 
-<p align="center">
+
 Para executar esse projeto:
+
 - git clone https://github.com/Lincado/product-catalog.git
 - Abra o repositorio e inicie o comando npm install
 - em seguida execute com npm run dev
-</p>
+
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
