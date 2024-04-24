@@ -23,10 +23,6 @@ Para executar esse projeto:
 
 <br>
 
-<p align="center">
-  <img alt="rocketpay" src=".github/project.png" width="100%">
-</p>
-
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
