@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import { productsData, isProduct } from "../../data/ProductData";
+import formatter from "../../utils/Formatter";
 export default function Home() {
-  const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
   return (
     <>
       <div className="container flex flex-wrap justify-between mx-auto mt-28 gap-14 pt-8 pb-16 ">

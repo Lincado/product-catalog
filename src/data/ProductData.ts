@@ -37,6 +37,7 @@ export interface ProductDetails {
   description: string;
   price: number;
   photo: string;
+  amount: number;
 }
 
 const productsData: ProductDetails[] = [
@@ -47,6 +48,7 @@ const productsData: ProductDetails[] = [
       "Smartphone Samsung Galaxy - Desfrute de desempenho excepcional e tela vibrante com o mais recente smartphone da Samsung.",
     price: 1254,
     photo: celularSamsung,
+    amount: 1,
   },
   {
     id: 2,
@@ -55,6 +57,7 @@ const productsData: ProductDetails[] = [
       "Computador Completo Digital - Potente e versátil, este computador oferece poder de processamento para todas as suas necessidades digitais.",
     price: 1854,
     photo: computadorCompletoDigital,
+    amount: 1,
   },
   {
     id: 3,
@@ -63,6 +66,7 @@ const productsData: ProductDetails[] = [
       "Headset Fifine RGB Gaming - Entre no mundo dos jogos com estilo e imersão de áudio, graças a este headset com iluminação RGB.",
     price: 200,
     photo: fifineDynamicRGBGamingHeadset,
+    amount: 1,
   },
   {
     id: 4,
@@ -72,6 +76,7 @@ const productsData: ProductDetails[] = [
 
     price: 350,
     photo: headsetLG,
+    amount: 1,
   },
   {
     id: 5,
@@ -81,6 +86,7 @@ const productsData: ProductDetails[] = [
 
     price: 98,
     photo: hyperxFuryUltra1Straight,
+    amount: 1,
   },
   {
     id: 6,
@@ -90,6 +96,7 @@ const productsData: ProductDetails[] = [
 
     price: 3600,
     photo: iphone14,
+    amount: 1,
   },
   {
     id: 7,
@@ -99,6 +106,7 @@ const productsData: ProductDetails[] = [
 
     price: 280,
     photo: kitGamerCompletoFone,
+    amount: 1,
   },
   {
     id: 8,
@@ -108,6 +116,7 @@ const productsData: ProductDetails[] = [
 
     price: 158,
     photo: kitGamerMotospeedPretoTecladoMecanico,
+    amount: 1,
   },
   {
     id: 9,
@@ -117,6 +126,7 @@ const productsData: ProductDetails[] = [
 
     price: 97,
     photo: kitTecladoMouseFone,
+    amount: 1,
   },
   {
     id: 10,
@@ -126,6 +136,7 @@ const productsData: ProductDetails[] = [
 
     price: 2100,
     photo: laptop,
+    amount: 1,
   },
   {
     id: 11,
@@ -135,6 +146,7 @@ const productsData: ProductDetails[] = [
 
     price: 100,
     photo: mouseMousepad,
+    amount: 1,
   },
   {
     id: 12,
@@ -144,6 +156,7 @@ const productsData: ProductDetails[] = [
 
     price: 125,
     photo: mousepadOzzix,
+    amount: 1,
   },
   {
     id: 13,
@@ -153,6 +166,7 @@ const productsData: ProductDetails[] = [
 
     price: 82,
     photo: mousepadWarrior,
+    amount: 1,
   },
   {
     id: 14,
@@ -162,6 +176,7 @@ const productsData: ProductDetails[] = [
 
     price: 74,
     photo: mousepad,
+    amount: 1,
   },
   {
     id: 15,
@@ -171,6 +186,7 @@ const productsData: ProductDetails[] = [
 
     price: 1735,
     photo: pcCompleto,
+    amount: 1,
   },
   {
     id: 16,
@@ -180,6 +196,7 @@ const productsData: ProductDetails[] = [
 
     price: 1854,
     photo: pcCompleto2,
+    amount: 1,
   },
   {
     id: 17,
@@ -189,6 +206,7 @@ const productsData: ProductDetails[] = [
 
     price: 2000,
     photo: pcCompleto3,
+    amount: 1,
   },
   {
     id: 18,
@@ -198,6 +216,7 @@ const productsData: ProductDetails[] = [
 
     price: 1600,
     photo: pcCompleto4,
+    amount: 1,
   },
   {
     id: 19,
@@ -207,6 +226,7 @@ const productsData: ProductDetails[] = [
 
     price: 1900,
     photo: pcCompleto5,
+    amount: 1,
   },
   {
     id: 20,
@@ -216,6 +236,7 @@ const productsData: ProductDetails[] = [
 
     price: 1500,
     photo: pcDeMesa,
+    amount: 1,
   },
   {
     id: 21,
@@ -225,6 +246,7 @@ const productsData: ProductDetails[] = [
 
     price: 3000,
     photo: pcGamer1,
+    amount: 1,
   },
   {
     id: 22,
@@ -234,6 +256,7 @@ const productsData: ProductDetails[] = [
 
     price: 5000,
     photo: pcGamer2,
+    amount: 1,
   },
   {
     id: 23,
@@ -243,6 +266,7 @@ const productsData: ProductDetails[] = [
 
     price: 200,
     photo: playstationPulse,
+    amount: 1,
   },
   {
     id: 24,
@@ -252,6 +276,7 @@ const productsData: ProductDetails[] = [
 
     price: 2250,
     photo: pocoX6,
+    amount: 1,
   },
   {
     id: 25,
@@ -261,6 +286,7 @@ const productsData: ProductDetails[] = [
 
     price: 1100,
     photo: smartphoneSamsungGalaxyA15,
+    amount: 1,
   },
   {
     id: 26,
@@ -270,6 +296,7 @@ const productsData: ProductDetails[] = [
 
     price: 1690,
     photo: infinixPositivo,
+    amount: 1,
   },
   {
     id: 27,
@@ -279,6 +306,7 @@ const productsData: ProductDetails[] = [
 
     price: 1320,
     photo: smartphoneSamsung,
+    amount: 1,
   },
   {
     id: 28,
@@ -288,6 +316,7 @@ const productsData: ProductDetails[] = [
 
     price: 221,
     photo: tecladoLG,
+    amount: 1,
   },
   {
     id: 29,
@@ -297,6 +326,7 @@ const productsData: ProductDetails[] = [
 
     price: 54,
     photo: tecladoPadraoErgonomico,
+    amount: 1,
   },
   {
     id: 30,
@@ -306,6 +336,7 @@ const productsData: ProductDetails[] = [
 
     price: 180,
     photo: kitGamerDazzCombo4em1Arsenal,
+    amount: 1,
   },
 ];
 
@@ -314,7 +345,8 @@ function isProduct(object: ProductDetails): object is ProductDetails {
     "id" in object &&
     "title" in object &&
     "description" in object &&
-    "photo" in object
+    "photo" in object &&
+    "amount" in object
   );
 }
 
