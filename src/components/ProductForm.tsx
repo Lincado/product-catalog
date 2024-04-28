@@ -5,8 +5,7 @@ import { BiPlus } from "react-icons/bi";
 import { RiSubtractLine } from "react-icons/ri";
 
 import useCartStore from "../store/CartStore";
-import { ProductDetails } from "../data/ProductData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Product, QuantityAmount, schema } from "./SchemaForm";
 
 export const ProductForm: React.FC<Product> = ({ product }) => {
@@ -36,13 +35,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
     resolver: zodResolver(schema),
   });
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  const handleSubmitQuantity = () => {};
-
-  const handleAddToCart = (product: ProductDetails) => {
+  const handleSubmitQuantity = () => {
     addToCart(product, count);
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), 3000);
@@ -56,7 +49,8 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
       >
         <div className="flex">
           <button
-            className="bg-gray-200 w-10 flex items-center justify-center "
+            className="bg-gray-200 w-10 flex items-center justify-center"
+            type="button"
             onClick={decrease}
           >
             <RiSubtractLine size={20} />
@@ -75,6 +69,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
           </div>
           <button
             className="bg-gray-200 w-10 flex items-center justify-center"
+            type="button"
             onClick={increase}
           >
             <BiPlus size={20} />
@@ -85,8 +80,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
         )}
         <button
           className="bg-green-500 p-2 flex  w-52  gap-2 items-center  rounded-lg text-white font-semibold  hover:bg-white hover:border-[1px] hover:border-green-500 hover:text-green-500 transition ease-out"
-          type="button"
-          onClick={() => handleAddToCart(product)}
+          type="submit"
         >
           Adicionar ao carrinho <AiOutlineShoppingCart size={20} />
         </button>

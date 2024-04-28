@@ -24,11 +24,19 @@ const useCartStore = create<CartStore>((set) => ({
             ? { ...product, amount: product.amount + amount }
             : product,
         );
-        return { ...state, cart: updatedCart };
+        const updatedState = { ...state, cart: updatedCart };
+        localStorage.setItem("cart", JSON.stringify(updatedState.cart));
+        return updatedState;
       } else {
-        return { ...state, cart: [...state.cart, { ...item, amount }] };
+        const updatedState = {
+          ...state,
+          cart: [...state.cart, { ...item, amount }],
+        };
+        localStorage.setItem("cart", JSON.stringify(updatedState));
+        return updatedState;
       }
     }),
+
   removeToCart: (id) =>
     set((state) => {
       const updatedCart = state.cart.filter((item) => item.id !== id);
@@ -36,6 +44,7 @@ const useCartStore = create<CartStore>((set) => ({
 
       return { cart: updatedCart };
     }),
+
   clearCart: () =>
     set(() => {
       localStorage.removeItem("cart");
