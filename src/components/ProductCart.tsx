@@ -15,8 +15,9 @@ import useTotal from "../store/PriceTotal";
 export const ProductForm: React.FC<Product> = ({ product }) => {
   const { setAmount } = useAmount();
   const { setTotalPrice } = useTotal();
-  const [cart, removeToCart] = useCartStore((state) => [
+  const [cart, addToCart, removeToCart] = useCartStore((state) => [
     state.cart,
+    state.addToCart,
     state.removeToCart,
   ]);
 
@@ -25,6 +26,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
   const increase = () => {
     const newCount = count + 1;
     setCount(newCount);
+    addToCart(product, +1);
     updateLocalStorage(newCount);
   };
 
@@ -32,6 +34,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
     const newCount = count - 1;
     if (count > 1) {
       setCount(newCount);
+      addToCart(product, -1);
       updateLocalStorage(newCount);
     }
   };
@@ -66,6 +69,14 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart, setAmount, setTotalPrice]);
 
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCount = parseInt(e.target.value);
+    if (!isNaN(newCount) && newCount >= 1) {
+      setCount(newCount);
+      updateLocalStorage(newCount);
+    }
+  };
+
   return (
     <>
       <form className="flex flex-col gap-6 items-center">
@@ -78,6 +89,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
           <button
             className="bg-gray-200 w-10 flex items-center justify-center "
             onClick={decrease}
+            type="button"
           >
             <RiSubtractLine size={20} />
           </button>
@@ -90,12 +102,13 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
               type="number"
               {...register("amount")}
               value={count}
-              onChange={(e) => setCount(parseInt(e.target.value))}
+              onChange={handleQuantityChange}
             />
           </div>
           <button
             className="bg-gray-200 w-10 flex items-center justify-center"
             onClick={increase}
+            type="button"
           >
             <BiPlus size={20} />
           </button>
