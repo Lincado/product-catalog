@@ -25,21 +25,24 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
 
   const increase = () => {
     const newCount = count + 1;
+    const quantityAdded = 1;
     setCount(newCount);
-    addToCart(product, +1);
+    addToCart(product, quantityAdded);
     updateLocalStorage(newCount);
   };
 
   const decrease = () => {
     const newCount = count - 1;
+    const quantityRemove = -1;
     if (count > 1) {
       setCount(newCount);
-      addToCart(product, -1);
+      addToCart(product, quantityRemove);
       updateLocalStorage(newCount);
     }
   };
   const {
     register,
+    handleSubmit,
     formState: { errors },
   } = useForm<QuantityAmount>({
     mode: "all",
@@ -69,17 +72,17 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart, setAmount, setTotalPrice]);
 
-  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newCount = parseInt(e.target.value);
-    if (!isNaN(newCount) && newCount >= 1) {
-      setCount(newCount);
-      updateLocalStorage(newCount);
-    }
+  const handleQuantityChange = () => {
+    const newCount = count - product.amount;
+    addToCart(product, newCount);
   };
 
   return (
     <>
-      <form className="flex flex-col gap-6 items-center">
+      <form
+        onSubmit={handleSubmit(handleQuantityChange)}
+        className="flex flex-col gap-6 items-center"
+      >
         <div>
           <h2 className="font-bold font-sans text-md">
             {formatter.format(product.amount * product.price)}
@@ -102,7 +105,7 @@ export const ProductForm: React.FC<Product> = ({ product }) => {
               type="number"
               {...register("amount")}
               value={count}
-              onChange={handleQuantityChange}
+              onChange={(e) => setCount(parseInt(e.target.value))}
             />
           </div>
           <button
