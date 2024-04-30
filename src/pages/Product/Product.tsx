@@ -22,18 +22,18 @@ export default function Product() {
 
   return (
     <>
-      <div className="container max-w-4xl mx-auto my-44 rounded-lg border border-gray-200 p-8">
+      <div className="container max-w-max mx-auto my-44 rounded-lg border border-gray-200 p-8">
         {product.map((product, idx) =>
           isProduct(product) ? (
-            <div key={idx} className="flex justify-between">
+            <div key={idx} className="grid lg:grid-cols-2 grid-cols-1 gap-10">
               <div className="w-[400px]">
                 <img src={product.photo} alt={product.title} />
               </div>
-              <div className="flex flex-col justify-between items-start border border-gray-200 p-3 rounded-lg h-[400px]">
+              <div className="grid gap-5 items-start border border-gray-200 p-3 rounded-lg ">
                 <h2 className="font-bold first-letter:uppercase text-[20px] font-sans">
                   {product.title}
                 </h2>
-                <p className="w-80 text-[17px] text-gray-800 font-sans">
+                <p className="w-96 text-[17px] text-gray-800 font-sans">
                   {product.description}
                 </p>
                 <h3 className="text-15px font-semibold text-red-500 font-sans">

@@ -29,13 +29,13 @@ export default function Cart() {
   return (
     <>
       {cart.length > 0 ? (
-        <div className="flex justify-center gap-10 max-w-7xl mx-auto my-20 p-3">
-          <div className="max-h-[700px] max-w-6xl w-[800px] overflow-y-auto p-2">
+        <div className="grid lg:grid-flow-col gap-14 max-w-6xl mx-auto my-20 p-3 place-items-center justify-center">
+          <div className="max-h-[700px] w-[750px]  overflow-y-auto p-2">
             {cart.map((product, idx) =>
               isProduct(product) ? (
                 <div
                   key={idx}
-                  className="p-4 rounded-md border-t border-gray-200 flex justify-between items-center gap-3"
+                  className="p-4 rounded-md border-t border-gray-200 lg:grid-cols-3 grid grid-cols-1 place-items-center gap-10"
                 >
                   <div className="bg-gray-200 h-64 w-64 flex items-center justify-center shadow-md rounded-lg">
                     <img
@@ -58,7 +58,7 @@ export default function Cart() {
               ),
             )}
           </div>
-          <div className="bg-gray-200 w-64 h-48 rounded-md flex flex-col items-center  px-2 py-3 justify-between">
+          <div className="bg-gray-200 w-64 h-48 rounded-md gap-1 grid px-2 py-3 place-items-center text-center self-start">
             <h2 className="font-bold text-lg">Detalhes da compra</h2>
             <h3 className="font-semibold text-[16px]">Quantidade: {amount}</h3>
             <h3 className="font-semibold text-[16px]">

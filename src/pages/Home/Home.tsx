@@ -4,7 +4,7 @@ import formatter from "../../utils/Formatter";
 export default function Home() {
   return (
     <>
-      <div className="container flex flex-wrap justify-between mx-auto mt-28 gap-14 pt-8 pb-16 ">
+      <div className="container grid 2xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-28 mx-auto gap-14 justify-center place-items-center">
         {productsData.map((product) => (
           <div
             key={product.id}
